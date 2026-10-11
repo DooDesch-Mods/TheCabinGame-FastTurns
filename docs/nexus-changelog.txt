@@ -1,0 +1,3 @@
+[list]
+[*]Speeds up selected table, card and board-piece transitions at 2x by default. Intro and minigame timers keep their original pace.
+[/list]
