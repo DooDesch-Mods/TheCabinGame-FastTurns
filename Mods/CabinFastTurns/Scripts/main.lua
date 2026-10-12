@@ -6,6 +6,8 @@ require("cabin_host_settings").start(mod)
 local speed = require("speed")
 local BOARD = "/Game/CabinGameContent/BoardGameStuff/Board/GameBoard_BP.GameBoard_BP_C"
 local CARD = "/Game/CabinGameContent/BoardGameStuff/Cards/ParentCard.ParentCard_C"
+local THIEF = "/Game/CabinGameContent/BoardGameStuff/Cards/ChanceCards/PC_Thief.PC_Thief_C"
+local CATCHING_UP = "/Game/CabinGameContent/BoardGameStuff/Cards/ChanceCards/PC_CatchingUp.PC_CatchingUp_C"
 local rounds,bases = {},{}
 local ownSet = false
 local function record(board)
@@ -79,6 +81,8 @@ mod:bind("/Script/Engine.KismetSystemLibrary:Delay",function(context,world,durat
     local name = info.ExecutionFunction:ToString()
     local allowed = owner:IsA(BOARD) and name=="ExecuteUbergraph_GameBoard_BP" and speed.boardDelays[info.UUID]
         or owner:IsA(CARD) and name=="ExecuteUbergraph_ParentCard" and speed.cardDelays[info.UUID]
+        or owner:IsA(CARD) and owner:IsA(THIEF) and name=="ExecuteUbergraph_PC_Thief" and speed.thiefDelays[info.UUID]
+        or owner:IsA(CARD) and owner:IsA(CATCHING_UP) and name=="ExecuteUbergraph_PC_CatchingUp" and speed.catchingUpDelays[info.UUID]
     if allowed then duration:set(speed.delay(duration:get(),factor(owner))) end
 end,"pre")
 mod:observe("timeline references",function()

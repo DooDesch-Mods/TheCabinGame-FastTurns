@@ -12,6 +12,8 @@ M.boardDelays = {
 }
 M.cardDelays = {[113569087]=true,[-661100838]=true,[-473459973]=true,
     [-857181867]=true,[-1441898126]=true,[-325550363]=true,[609643387]=true,[398120949]=true}
+M.thiefDelays = {[825083586]=true,[-1034458098]=true}
+M.catchingUpDelays = {[-1663121935]=true}
 function M.rate(original,factor)
     assert(type(original)=="number" and original==original and math.abs(original)<math.huge,"original transition rate invalid")
     assert(type(factor)=="number" and factor>0 and factor<math.huge,"speed factor must be finite and positive")
