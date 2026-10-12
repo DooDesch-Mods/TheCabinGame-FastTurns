@@ -28,6 +28,7 @@ local BOARD='/Game/CabinGameContent/BoardGameStuff/Board/GameBoard_BP.GameBoard_
 local CARD='/Game/CabinGameContent/BoardGameStuff/Cards/ParentCard.ParentCard_C'
 local THIEF='/Game/CabinGameContent/BoardGameStuff/Cards/ChanceCards/PC_Thief.PC_Thief_C'
 local CATCHING_UP='/Game/CabinGameContent/BoardGameStuff/Cards/ChanceCards/PC_CatchingUp.PC_CatchingUp_C'
+local ROOM_LAYOUT='/Game/CabinGameContent/BoardGameStuff/CardMapLayout_BP.CardMapLayout_BP_C'
 local DELAY='/Script/Engine.KismetSystemLibrary:Delay'
 local function parameter(value)
     return {get=function() return value end,set=function(_,nextValue) value=nextValue end}
@@ -136,6 +137,41 @@ catchingUp.GameBoard=unstarted
 assert(observed(catchingUp,-1663121935,7,'ExecuteUbergraph_PC_CatchingUp')==7)
 catchingUp.GameBoard=board;catchingUp.invalid=true
 assert(observed(catchingUp,-1663121935,7,'ExecuteUbergraph_PC_CatchingUp')==7)
+local layout=owner(ROOM_LAYOUT,110);layout.GameBoard=board
+assert(observed(layout,1008126462,5,'ExecuteUbergraph_CardMapLayout_BP')==1)
+registered[BOARD..':CabinFastTurnsSpeed_MC'].pre(parameter(board),parameter(2))
+assert(observed(layout,1008126462,5,'ExecuteUbergraph_CardMapLayout_BP')==2.5)
+store.values.speed=5
+assert(observed(layout,1008126462,5,'ExecuteUbergraph_CardMapLayout_BP')==2.5,'layout wait must use frozen round speed')
+assert(observed(layout,-1156500248,5,'ExecuteUbergraph_CardMapLayout_BP')==5,'initial card deal wait must remain native')
+assert(observed(layout,-111059295,0.1,'ExecuteUbergraph_CardMapLayout_BP')==0.1,'detector update wait must remain native')
+assert(observed(layout,1008126462,5,'ExecuteUbergraph_ParentCard')==5)
+assert(observed(card,1008126462,5,'ExecuteUbergraph_CardMapLayout_BP')==5)
+assert(observed(board,1008126462,5,'ExecuteUbergraph_CardMapLayout_BP')==5)
+assert(observed(unrelated,1008126462,5,'ExecuteUbergraph_CardMapLayout_BP')==5)
+local derivedLayout=owner('/Game/Test/DerivedLayout.DerivedLayout_C',111,{[ROOM_LAYOUT]=true})
+derivedLayout.GameBoard=board
+assert(observed(derivedLayout,1008126462,5,'ExecuteUbergraph_CardMapLayout_BP')==2.5)
+assert(observed(derivedLayout,1008126462,5,'ExecuteUbergraph_DerivedLayout')==5)
+board.intro=true
+assert(observed(layout,1008126462,5,'ExecuteUbergraph_CardMapLayout_BP')==5)
+board.intro=false;board.deal=true
+assert(observed(layout,1008126462,5,'ExecuteUbergraph_CardMapLayout_BP')==5)
+board.deal=false
+layout.GameBoard=unstarted
+assert(observed(layout,1008126462,5,'ExecuteUbergraph_CardMapLayout_BP')==5)
+layout.GameBoard=unrelated
+assert(observed(layout,1008126462,5,'ExecuteUbergraph_CardMapLayout_BP')==5,'foreign GameBoard must be excluded')
+layout.GameBoard=nil
+assert(observed(layout,1008126462,5,'ExecuteUbergraph_CardMapLayout_BP')==5)
+layout.GameBoard=board
+board.invalid=true
+assert(observed(layout,1008126462,5,'ExecuteUbergraph_CardMapLayout_BP')==5,'stale bound GameBoard must preserve native wait')
+board.invalid=false
+registered[BOARD..':CabinFastTurnsSpeed_MC'].pre(parameter(board),parameter(1))
+assert(observed(layout,1008126462,5,'ExecuteUbergraph_CardMapLayout_BP')==5)
+layout.invalid=true
+assert(observed(layout,1008126462,5,'ExecuteUbergraph_CardMapLayout_BP')==5)
 local speed=require('speed')
 assert(not speed.board.IntroRewind_TL and not speed.board.DealCards_TL and not speed.cards.CursorHover_TL)
 ''')

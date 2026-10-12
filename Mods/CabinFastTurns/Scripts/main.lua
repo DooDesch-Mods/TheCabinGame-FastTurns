@@ -8,6 +8,7 @@ local BOARD = "/Game/CabinGameContent/BoardGameStuff/Board/GameBoard_BP.GameBoar
 local CARD = "/Game/CabinGameContent/BoardGameStuff/Cards/ParentCard.ParentCard_C"
 local THIEF = "/Game/CabinGameContent/BoardGameStuff/Cards/ChanceCards/PC_Thief.PC_Thief_C"
 local CATCHING_UP = "/Game/CabinGameContent/BoardGameStuff/Cards/ChanceCards/PC_CatchingUp.PC_CatchingUp_C"
+local ROOM_LAYOUT = "/Game/CabinGameContent/BoardGameStuff/CardMapLayout_BP.CardMapLayout_BP_C"
 local rounds,bases = {},{}
 local ownSet = false
 local function record(board)
@@ -15,10 +16,10 @@ local function record(board)
     return rounds[board:GetAddress()]
 end
 local function factor(owner)
-    local board = owner:IsA(BOARD) and owner or owner:IsA(CARD) and owner.GameBoard
+    local board = owner:IsA(BOARD) and owner or (owner:IsA(CARD) or owner:IsA(ROOM_LAYOUT)) and owner.GameBoard
     local round = record(board)
     if not round then return 1 end
-    if owner:IsA(CARD) and (board.IntroRewind_TL:IsPlaying() or board.DealCards_TL:IsPlaying()) then return 1 end
+    if (owner:IsA(CARD) or owner:IsA(ROOM_LAYOUT)) and (board.IntroRewind_TL:IsPlaying() or board.DealCards_TL:IsPlaying()) then return 1 end
     return round.speed
 end
 mod:bind(BOARD .. ":CabinFastTurnsSpeed_MC",function(context,value)
@@ -83,6 +84,7 @@ mod:bind("/Script/Engine.KismetSystemLibrary:Delay",function(context,world,durat
         or owner:IsA(CARD) and name=="ExecuteUbergraph_ParentCard" and speed.cardDelays[info.UUID]
         or owner:IsA(CARD) and owner:IsA(THIEF) and name=="ExecuteUbergraph_PC_Thief" and speed.thiefDelays[info.UUID]
         or owner:IsA(CARD) and owner:IsA(CATCHING_UP) and name=="ExecuteUbergraph_PC_CatchingUp" and speed.catchingUpDelays[info.UUID]
+        or owner:IsA(ROOM_LAYOUT) and name=="ExecuteUbergraph_CardMapLayout_BP" and speed.roomLayoutDelays[info.UUID]
     if allowed then duration:set(speed.delay(duration:get(),factor(owner))) end
 end,"pre")
 mod:observe("timeline references",function()
