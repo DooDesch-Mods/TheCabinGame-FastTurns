@@ -4,7 +4,7 @@ local runtime = require("cabin_runtime")
 local mod = runtime.start(directory,require("definition"))
 require("cabin_host_settings").start(mod)
 local speed = require("speed")
-local BOARD = "/Game/CabinGameContent/BoardGameStuff/GameBoard_BP.GameBoard_BP_C"
+local BOARD = "/Game/CabinGameContent/BoardGameStuff/Board/GameBoard_BP.GameBoard_BP_C"
 local CARD = "/Game/CabinGameContent/BoardGameStuff/Cards/ParentCard.ParentCard_C"
 local rounds,bases = {},{}
 local ownSet = false
