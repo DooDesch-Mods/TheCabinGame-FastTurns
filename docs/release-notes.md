@@ -1,3 +1,8 @@
-Speeds up selected table, card and board-piece transitions at 2x by default. Intro and minigame timers keep their original pace.
+## Changes in 0.1.0
 
-Requires UE4SS v3.0.1-1164-g5e627997 and Steam build 25553694.
+### Added
+
+- Speed up table, card and board-piece transitions at 2x by default.
+- Keep intro and minigame timers at their original pace.
+
+For manual installation and requirements, see README.md in the ZIP.
