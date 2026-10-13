@@ -4,26 +4,30 @@
 
 Speeds up selected table, card and board-piece transitions at 2x by default. Intro and minigame timers keep their original pace.
 
-**Status: test candidate. Game acceptance is pending. No public release yet.**
+![The Cabin Game table and cards](docs/thumbnail.png)
 
-Target: Steam build `25553694`, Unreal 5.5 and UE4SS `v3.0.1-1164-g5e627997`. Install UE4SS separately.
+## Installation
 
-1. Close the game and install the required UE4SS runtime in your private test copy.
-2. Copy `Mods/CabinFastTurns` into `the_cabin_game/Binaries/Win64/ue4ss/Mods`.
-3. Copy the archive's `the_cabin_game/Content/Paks/~mods` files to the same path in your game folder. Keep the three container files together.
+Requires UE4SS `v3.0.1-1164-g5e627997`, installed separately. Target game version: Steam build `25553694` (Unreal 5.5).
 
-CabinModSettings is optional. Each function mod uses its defaults and its own validated settings file without the Settings card. GraphicsProfiles supplies profile templates without the Settings card and never applies a profile on startup.
+1. Close the game and install UE4SS.
+2. Copy the archive's `Mods/CabinFastTurns` folder into `the_cabin_game/Binaries/Win64/ue4ss/Mods`.
+3. Copy the archive's `the_cabin_game/Content/Paks/~mods` files into the same path in your game folder. Keep `CabinFastTurns_P.pak`, `CabinFastTurns_P.utoc` and `CabinFastTurns_P.ucas` together.
 
-FastTurns and ShortEvents settings take effect next round and are controlled by the host. FastTurns requires its Lua and overlay on every participating client. Other settings are local. Multiplayer acceptance is pending.
+Every participating multiplayer client needs both the Lua mod and the overlay container files.
 
-Close the game before removal. Remove only this mod's folder and its named container files, if included. Back up `Scripts/settings.dat` first to keep preferences. GraphicsProfiles does not restore graphics automatically on removal; use Restore previous before removal if required.
+## Settings
 
-Rejoin integration requires its matching layout/host-settings adapter and authority copies. That combined installation is unaccepted. Do not overwrite an active Rejoin runtime.
+The mod is enabled by default with a turn speed of 2x. Install the optional CabinModSettings mod to change turn speed from 1x to 5x or disable the mod through the Settings card. Without CabinModSettings, CabinFastTurns uses its defaults and its own validated settings file.
 
-## Build and release
+The host controls these settings. Changes take effect next round.
 
-Use Python 3.13. Run `python -m pip install -r requirements-dev.txt`, `python -m unittest discover -s tests -v`, `python tests/check_lua.py`, then `python tools/package.py`.
+## Removal
 
-The builder writes a deterministic candidate ZIP and checksum in `dist`. Overlay containers are committed build inputs; CI packages them and does not cook Unreal assets or download the game. Runtime Lua and containers are covered by the acceptance fingerprint. `python tools/package.py --release` rejects a missing or stale game acceptance.
+Close the game. Back up `Mods/CabinFastTurns/Scripts/settings.dat` if you want to keep your preferences, then remove the `Mods/CabinFastTurns` folder and the three `CabinFastTurns_P` container files.
 
-CI checks Linux and Windows. See [publishing](docs/publishing.md) for the GitHub/Nexus flow and [Nexus description](docs/nexus.md) for the prepared listing.
+## Building from source
+
+Use Python 3.13. Install development dependencies with `python -m pip install -r requirements-dev.txt`, run `python -m unittest discover -s tests -v` and `python tests/check_lua.py`, then build with `python tools/package.py`.
+
+The builder writes a ZIP and checksum to `dist` using the committed overlay containers. See [publishing](docs/publishing.md) for release checks and [Nexus description](docs/nexus.md) for listing text.

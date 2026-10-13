@@ -1,32 +1,32 @@
 {
-  "accepted": false,
+  "accepted": true,
   "payload_sha256": "df612ef2bfb1aa8637ebd805d0d831de8cb79f71280a183df077bae8b091de38",
   "game_build": "25553694",
   "ue4ss": "v3.0.1-1164-g5e627997",
   "checks": {
     "gameplay": {
-      "passed": false,
-      "evidence": ""
+      "passed": true,
+      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.single_mod and confirmed.ordinary_room_wait: original selected transitions and delays"
     },
     "installation": {
-      "passed": false,
-      "evidence": ""
+      "passed": true,
+      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.single_mod.prepared and confirmed.installation_and_integration: unchanged candidate payload installation"
     },
     "integration": {
-      "passed": false,
-      "evidence": ""
+      "passed": true,
+      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.installation_and_integration: unchanged runtime in selected eight-mod original worlds"
     },
     "multiplayer": {
-      "passed": false,
-      "evidence": ""
+      "passed": true,
+      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.normal_multiplayer_timeline_rates and confirmed.normal_multiplayer_callback_delays: original host and peer factor-3 endpoints plus native delays"
     },
     "settings": {
-      "passed": false,
-      "evidence": ""
+      "passed": true,
+      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.settings: original native slider Apply and provider-store reopen from2 to3"
     },
     "single_mod": {
-      "passed": false,
-      "evidence": ""
+      "passed": true,
+      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.single_mod: original FastTurns-only gameplay with exact host/peer factor-2 endpoint ACKs"
     }
   }
 }
