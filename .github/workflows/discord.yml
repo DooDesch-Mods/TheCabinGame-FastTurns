@@ -38,6 +38,7 @@ jobs:
           PRODUCT_NAME: Cabin Fast Turns
           PRODUCT_SUMMARY: Speeds up selected table, card and board-piece transitions at 2x by default.
           PRODUCT_SUPPORT: https://support.doodesch.de/fastturns
+          NEXUS_MOD_URL: ${{ vars.NEXUS_MOD_URL }}
           PRODUCT_THUMBNAIL: https://raw.githubusercontent.com/DooDesch-Mods/TheCabinGame-FastTurns/main/docs/thumbnail.png
         run: python tools/announce-release.py
       - name: Keep Discord acknowledgement
