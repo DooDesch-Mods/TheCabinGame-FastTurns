@@ -20,6 +20,7 @@ IsInGameThread=function() return true end
 LoopInGameThreadWithDelay=function(_,callback) tick=callback;return 1 end
 IsValidDelayedActionHandle=function(handle) return handle==1 end
 StaticFindObject=function() return {IsValid=function() return true end} end
+FindAllOf=function() return {} end
 RegisterHook=function(path,pre,post)
     registered[path]={pre=pre,post=post}
     return 1,2

@@ -1,32 +1,34 @@
 {
   "accepted": true,
-  "payload_sha256": "df612ef2bfb1aa8637ebd805d0d831de8cb79f71280a183df077bae8b091de38",
+  "payload_sha256": "9f25271374b6ac4f5b9b9ce469421e58fec96f05c8307c2746858cee94e065ee",
   "game_build": "25553694",
   "ue4ss": "v3.0.1-1164-g5e627997",
   "checks": {
     "gameplay": {
       "passed": true,
-      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.single_mod and confirmed.ordinary_room_wait: original selected transitions and delays"
+      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.single_mod and confirmed.ordinary_room_wait: original selected transitions and delays 0.1.1: Workspace/evidence/vortex-startup-crash-20261022/neighbor-fixed-control-crash and control-lifecycle-accepted: actual Rejoin authority loads FastTurns and host plus graphical client receive speed 2.0. Three-LuaVM fixture covers delayed registration, missed first message and host authority. Existing timeline/delay/container/settings bytes unchanged; prior native acceptance retained. Full three-player round remains unmeasured."
     },
     "installation": {
       "passed": true,
-      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.single_mod.prepared and confirmed.installation_and_integration: unchanged candidate payload installation"
+      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.single_mod.prepared and confirmed.installation_and_integration: unchanged candidate payload installation 0.1.1: Workspace/evidence/vortex-startup-crash-20261022/neighbor-fixed-control-crash and control-lifecycle-accepted: actual Rejoin authority loads FastTurns and host plus graphical client receive speed 2.0. Three-LuaVM fixture covers delayed registration, missed first message and host authority. Existing timeline/delay/container/settings bytes unchanged; prior native acceptance retained. Full three-player round remains unmeasured."
     },
     "integration": {
       "passed": true,
-      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.installation_and_integration: unchanged runtime in selected eight-mod original worlds"
+      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.installation_and_integration: unchanged runtime in selected eight-mod original worlds 0.1.1: Workspace/evidence/vortex-startup-crash-20261022/neighbor-fixed-control-crash and control-lifecycle-accepted: actual Rejoin authority loads FastTurns and host plus graphical client receive speed 2.0. Three-LuaVM fixture covers delayed registration, missed first message and host authority. Existing timeline/delay/container/settings bytes unchanged; prior native acceptance retained. Full three-player round remains unmeasured."
     },
     "multiplayer": {
       "passed": true,
-      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.normal_multiplayer_timeline_rates and confirmed.normal_multiplayer_callback_delays: original host and peer factor-3 endpoints plus native delays"
+      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.normal_multiplayer_timeline_rates and confirmed.normal_multiplayer_callback_delays: original host and peer factor-3 endpoints plus native delays 0.1.1: Workspace/evidence/vortex-startup-crash-20261022/neighbor-fixed-control-crash and control-lifecycle-accepted: actual Rejoin authority loads FastTurns and host plus graphical client receive speed 2.0. Three-LuaVM fixture covers delayed registration, missed first message and host authority. Existing timeline/delay/container/settings bytes unchanged; prior native acceptance retained. Full three-player round remains unmeasured."
     },
     "settings": {
       "passed": true,
-      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.settings: original native slider Apply and provider-store reopen from2 to3"
+      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.settings: original native slider Apply and provider-store reopen from2 to3 0.1.1: Workspace/evidence/vortex-startup-crash-20261022/neighbor-fixed-control-crash and control-lifecycle-accepted: actual Rejoin authority loads FastTurns and host plus graphical client receive speed 2.0. Three-LuaVM fixture covers delayed registration, missed first message and host authority. Existing timeline/delay/container/settings bytes unchanged; prior native acceptance retained. Full three-player round remains unmeasured."
     },
     "single_mod": {
       "passed": true,
-      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.single_mod: original FastTurns-only gameplay with exact host/peer factor-2 endpoint ACKs"
+      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.single_mod: original FastTurns-only gameplay with exact host/peer factor-2 endpoint ACKs 0.1.1: Workspace/evidence/vortex-startup-crash-20261022/neighbor-fixed-control-crash and control-lifecycle-accepted: actual Rejoin authority loads FastTurns and host plus graphical client receive speed 2.0. Three-LuaVM fixture covers delayed registration, missed first message and host authority. Existing timeline/delay/container/settings bytes unchanged; prior native acceptance retained. Full three-player round remains unmeasured."
     }
-  }
+  },
+  "previous_acceptance": "docs/hotfix-validation.json#previous_acceptance",
+  "current_scope": "0.1.1: Workspace/evidence/vortex-startup-crash-20261022/neighbor-fixed-control-crash and control-lifecycle-accepted: actual Rejoin authority loads FastTurns and host plus graphical client receive speed 2.0. Three-LuaVM fixture covers delayed registration, missed first message and host authority. Existing timeline/delay/container/settings bytes unchanged; prior native acceptance retained. Full three-player round remains unmeasured."
 }

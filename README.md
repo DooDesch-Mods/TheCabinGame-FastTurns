@@ -20,7 +20,7 @@ Every participating multiplayer client needs both the Lua mod and the overlay co
 
 The mod is enabled by default with a turn speed of 2x. Install the optional CabinModSettings mod to change turn speed from 1x to 5x or disable the mod through the Settings card. Without CabinModSettings, CabinFastTurns uses its defaults and its own validated settings file.
 
-The host controls these settings. Changes take effect next round.
+The host controls these settings. Changes take effect next round. When using Rejoin, update the host to Rejoin 0.1.3 or later so its background session loads FastTurns and the host settings.
 
 ## Removal
 
