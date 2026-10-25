@@ -1,0 +1,123 @@
+{
+  "game_build": "26187517",
+  "version": "0.1.2",
+  "payload_sha256": "7a86b1fb5fee0293ae74794f3c9797cd4e455748b3325ae45acd93db5b8d0128",
+  "crash_reproduced": {
+    "host": "LowLevelFatalError [File:D:\\build\\++UE5\\Sync\\Engine\\Source\\Runtime\\CoreUObject\\Private\\Serialization\\AsyncLoading2.cpp] [Line: 2126] \nObjectSerializationError: /Game/CabinGameContent/Game_Level (0x334E96F58C41D84D) /Game/CabinGameContent/Game_Level (0x334E96F58C41D84D) - GameBoard_BP_C /Game/CabinGameContent/Game_Level.Game_Level:PersistentLevel.GameBoard_BP_C_4: Bad name index 1953460307/711.\n\n\n",
+    "peer": "LowLevelFatalError [File:D:\\build\\++UE5\\Sync\\Engine\\Source\\Runtime\\CoreUObject\\Private\\Serialization\\AsyncLoading2.cpp] [Line: 2126] \nObjectSerializationError: /Game/CabinGameContent/Game_Level (0x334E96F58C41D84D) /Game/CabinGameContent/Game_Level (0x334E96F58C41D84D) - GameBoard_BP_C /Game/CabinGameContent/Game_Level.Game_Level:PersistentLevel.GameBoard_BP_C_4: Bad name index 1953460307/711.\n\n\n"
+  },
+  "original_exports_preserved": 237,
+  "car_to_cabin_host_and_peer": true,
+  "original_draw_accept_room_placement": true,
+  "rewind_samples": {
+    "host": [
+      {
+        "index": 1,
+        "rate": 1,
+        "length": 10,
+        "elapsed": 10.0108691,
+        "visitor_delta": -15,
+        "table_clock_unchanged": true,
+        "turn_owner_unchanged": true
+      },
+      {
+        "index": 2,
+        "rate": 2,
+        "length": 10,
+        "elapsed": 5.0357543,
+        "visitor_delta": -15,
+        "table_clock_unchanged": true,
+        "turn_owner_unchanged": true
+      },
+      {
+        "index": 3,
+        "rate": 5,
+        "length": 10,
+        "elapsed": 2.0394835,
+        "visitor_delta": -15,
+        "table_clock_unchanged": true,
+        "turn_owner_unchanged": true
+      }
+    ],
+    "peer": [
+      {
+        "index": 1,
+        "rate": 1,
+        "length": 10,
+        "elapsed": 10.0135901,
+        "visitor_delta": -15,
+        "table_clock_unchanged": true,
+        "turn_owner_unchanged": true
+      },
+      {
+        "index": 2,
+        "rate": 2,
+        "length": 10,
+        "elapsed": 5.0189904,
+        "visitor_delta": -15,
+        "table_clock_unchanged": true,
+        "turn_owner_unchanged": true
+      },
+      {
+        "index": 3,
+        "rate": 5,
+        "length": 10,
+        "elapsed": 2.0006579,
+        "visitor_delta": -15,
+        "table_clock_unchanged": true,
+        "turn_owner_unchanged": true
+      }
+    ]
+  },
+  "original_selected_delay_sites": 31,
+  "untouched_intro_dialogue_minigame_timers": true,
+  "packaging_normalization": "mod-info.ini line endings normalized to repository LF policy after test; version and all Lua/container bytes unchanged.",
+  "tests": "47/48 initial unit tests passed; missing pending fingerprint fixed and all 4 release tests passed. Lua syntax and behavior checks passed, including the added timeline and three-state multiplayer fixture.",
+  "limitations": [
+    "Private IP multiplayer, one graphical host and one headless peer; Steam transport not exercised.",
+    "Native visitor reveal/rewind RPC fixture tests animation and replication; no complete Halloween card encounter was played.",
+    "Full third-party modpack was not rerun. Prior unchanged settings and integration evidence retained."
+  ],
+  "failed_probe_attempts": [
+    "Before GameStarted, trigger stopped at guard with no mutation.",
+    "Before SpawnedVisitor, original event correctly skipped the animation.",
+    "Initial observer treated a Blueprint post-hook as a pre-hook; corrected before measured samples."
+  ],
+  "evidence": "Workspace\\evidence\\nexus-drafts\\lan-pairs\\fast-halloween-fixed",
+  "tested_archive_sha256": "ca649ec0e5c2c0092d53f6cd9d6e763f53fcfe0e318d3d7cd07adc53989c6cb1",
+  "tested_archive_snapshot": "Workspace\\evidence\\fastturns-halloween-20261025\\tested-CabinFastTurns-0.1.2-candidate.zip",
+  "previous_acceptance": {
+    "accepted": true,
+    "payload_sha256": "9f25271374b6ac4f5b9b9ce469421e58fec96f05c8307c2746858cee94e065ee",
+    "game_build": "25553694",
+    "ue4ss": "v3.0.1-1164-g5e627997",
+    "checks": {
+      "gameplay": {
+        "passed": true,
+        "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.single_mod and confirmed.ordinary_room_wait: original selected transitions and delays 0.1.1: Workspace/evidence/vortex-startup-crash-20261022/neighbor-fixed-control-crash and control-lifecycle-accepted: actual Rejoin authority loads FastTurns and host plus graphical client receive speed 2.0. Three-LuaVM fixture covers delayed registration, missed first message and host authority. Existing timeline/delay/container/settings bytes unchanged; prior native acceptance retained. Full three-player round remains unmeasured."
+      },
+      "installation": {
+        "passed": true,
+        "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.single_mod.prepared and confirmed.installation_and_integration: unchanged candidate payload installation 0.1.1: Workspace/evidence/vortex-startup-crash-20261022/neighbor-fixed-control-crash and control-lifecycle-accepted: actual Rejoin authority loads FastTurns and host plus graphical client receive speed 2.0. Three-LuaVM fixture covers delayed registration, missed first message and host authority. Existing timeline/delay/container/settings bytes unchanged; prior native acceptance retained. Full three-player round remains unmeasured."
+      },
+      "integration": {
+        "passed": true,
+        "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.installation_and_integration: unchanged runtime in selected eight-mod original worlds 0.1.1: Workspace/evidence/vortex-startup-crash-20261022/neighbor-fixed-control-crash and control-lifecycle-accepted: actual Rejoin authority loads FastTurns and host plus graphical client receive speed 2.0. Three-LuaVM fixture covers delayed registration, missed first message and host authority. Existing timeline/delay/container/settings bytes unchanged; prior native acceptance retained. Full three-player round remains unmeasured."
+      },
+      "multiplayer": {
+        "passed": true,
+        "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.normal_multiplayer_timeline_rates and confirmed.normal_multiplayer_callback_delays: original host and peer factor-3 endpoints plus native delays 0.1.1: Workspace/evidence/vortex-startup-crash-20261022/neighbor-fixed-control-crash and control-lifecycle-accepted: actual Rejoin authority loads FastTurns and host plus graphical client receive speed 2.0. Three-LuaVM fixture covers delayed registration, missed first message and host authority. Existing timeline/delay/container/settings bytes unchanged; prior native acceptance retained. Full three-player round remains unmeasured."
+      },
+      "settings": {
+        "passed": true,
+        "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.settings: original native slider Apply and provider-store reopen from2 to3 0.1.1: Workspace/evidence/vortex-startup-crash-20261022/neighbor-fixed-control-crash and control-lifecycle-accepted: actual Rejoin authority loads FastTurns and host plus graphical client receive speed 2.0. Three-LuaVM fixture covers delayed registration, missed first message and host authority. Existing timeline/delay/container/settings bytes unchanged; prior native acceptance retained. Full three-player round remains unmeasured."
+      },
+      "single_mod": {
+        "passed": true,
+        "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.single_mod: original FastTurns-only gameplay with exact host/peer factor-2 endpoint ACKs 0.1.1: Workspace/evidence/vortex-startup-crash-20261022/neighbor-fixed-control-crash and control-lifecycle-accepted: actual Rejoin authority loads FastTurns and host plus graphical client receive speed 2.0. Three-LuaVM fixture covers delayed registration, missed first message and host authority. Existing timeline/delay/container/settings bytes unchanged; prior native acceptance retained. Full three-player round remains unmeasured."
+      }
+    },
+    "previous_acceptance": "docs/hotfix-validation.json#previous_acceptance",
+    "current_scope": "0.1.1: Workspace/evidence/vortex-startup-crash-20261022/neighbor-fixed-control-crash and control-lifecycle-accepted: actual Rejoin authority loads FastTurns and host plus graphical client receive speed 2.0. Three-LuaVM fixture covers delayed registration, missed first message and host authority. Existing timeline/delay/container/settings bytes unchanged; prior native acceptance retained. Full three-player round remains unmeasured."
+  }
+}

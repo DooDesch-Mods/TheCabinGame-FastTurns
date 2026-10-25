@@ -1,34 +1,34 @@
 {
   "accepted": true,
-  "payload_sha256": "9f25271374b6ac4f5b9b9ce469421e58fec96f05c8307c2746858cee94e065ee",
-  "game_build": "25553694",
+  "payload_sha256": "7a86b1fb5fee0293ae74794f3c9797cd4e455748b3325ae45acd93db5b8d0128",
+  "game_build": "26187517",
   "ue4ss": "v3.0.1-1164-g5e627997",
   "checks": {
+    "single_mod": {
+      "passed": true,
+      "evidence": "docs/halloween-validation.json - FastTurns alone: both clients load the original cabin via car and reach natural round readiness."
+    },
     "gameplay": {
       "passed": true,
-      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.single_mod and confirmed.ordinary_room_wait: original selected transitions and delays 0.1.1: Workspace/evidence/vortex-startup-crash-20261022/neighbor-fixed-control-crash and control-lifecycle-accepted: actual Rejoin authority loads FastTurns and host plus graphical client receive speed 2.0. Three-LuaVM fixture covers delayed registration, missed first message and host authority. Existing timeline/delay/container/settings bytes unchanged; prior native acceptance retained. Full three-player round remains unmeasured."
-    },
-    "installation": {
-      "passed": true,
-      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.single_mod.prepared and confirmed.installation_and_integration: unchanged candidate payload installation 0.1.1: Workspace/evidence/vortex-startup-crash-20261022/neighbor-fixed-control-crash and control-lifecycle-accepted: actual Rejoin authority loads FastTurns and host plus graphical client receive speed 2.0. Three-LuaVM fixture covers delayed registration, missed first message and host authority. Existing timeline/delay/container/settings bytes unchanged; prior native acceptance retained. Full three-player round remains unmeasured."
-    },
-    "integration": {
-      "passed": true,
-      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.installation_and_integration: unchanged runtime in selected eight-mod original worlds 0.1.1: Workspace/evidence/vortex-startup-crash-20261022/neighbor-fixed-control-crash and control-lifecycle-accepted: actual Rejoin authority loads FastTurns and host plus graphical client receive speed 2.0. Three-LuaVM fixture covers delayed registration, missed first message and host authority. Existing timeline/delay/container/settings bytes unchanged; prior native acceptance retained. Full three-player round remains unmeasured."
+      "evidence": "docs/halloween-validation.json - Original card draw/accept and room placement passed. New rewind at 1x/2x/5x reaches the same -15 degree endpoint with unchanged table clock and turn owner."
     },
     "multiplayer": {
       "passed": true,
-      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.normal_multiplayer_timeline_rates and confirmed.normal_multiplayer_callback_delays: original host and peer factor-3 endpoints plus native delays 0.1.1: Workspace/evidence/vortex-startup-crash-20261022/neighbor-fixed-control-crash and control-lifecycle-accepted: actual Rejoin authority loads FastTurns and host plus graphical client receive speed 2.0. Three-LuaVM fixture covers delayed registration, missed first message and host authority. Existing timeline/delay/container/settings bytes unchanged; prior native acceptance retained. Full three-player round remains unmeasured."
+      "evidence": "docs/halloween-validation.json - Original host multicast reaches the peer with matching 1x/2x/5x native durations. Default host speed 2 confirmed before the probe."
+    },
+    "installation": {
+      "passed": true,
+      "evidence": "docs/halloween-validation.json - Candidate Lua/container hashes match both isolated installed copies; all three companions present. Version metadata differs only by LF normalization."
     },
     "settings": {
       "passed": true,
-      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.settings: original native slider Apply and provider-store reopen from2 to3 0.1.1: Workspace/evidence/vortex-startup-crash-20261022/neighbor-fixed-control-crash and control-lifecycle-accepted: actual Rejoin authority loads FastTurns and host plus graphical client receive speed 2.0. Three-LuaVM fixture covers delayed registration, missed first message and host authority. Existing timeline/delay/container/settings bytes unchanged; prior native acceptance retained. Full three-player round remains unmeasured."
+      "evidence": "docs/halloween-validation.json - Unchanged storage/settings UI retains previous acceptance. Current Lua fixture checks frozen host settings and native multiplier 1/2/5 readback passed."
     },
-    "single_mod": {
+    "integration": {
       "passed": true,
-      "evidence": "Workspace/evidence/nexus-drafts/fastturns-acceptance1/aggregate.json - confirmed.single_mod: original FastTurns-only gameplay with exact host/peer factor-2 endpoint ACKs 0.1.1: Workspace/evidence/vortex-startup-crash-20261022/neighbor-fixed-control-crash and control-lifecycle-accepted: actual Rejoin authority loads FastTurns and host plus graphical client receive speed 2.0. Three-LuaVM fixture covers delayed registration, missed first message and host authority. Existing timeline/delay/container/settings bytes unchanged; prior native acceptance retained. Full three-player round remains unmeasured."
+      "evidence": "docs/halloween-validation.json - Current native UE4SS hooks and multicast passed on both clients. All 237 current original board exports preserved and 31 existing delay selectors retained. Unchanged inter-mod settings protocol retains previous evidence; full modpack not rerun."
     }
   },
-  "previous_acceptance": "docs/hotfix-validation.json#previous_acceptance",
-  "current_scope": "0.1.1: Workspace/evidence/vortex-startup-crash-20261022/neighbor-fixed-control-crash and control-lifecycle-accepted: actual Rejoin authority loads FastTurns and host plus graphical client receive speed 2.0. Three-LuaVM fixture covers delayed registration, missed first message and host authority. Existing timeline/delay/container/settings bytes unchanged; prior native acceptance retained. Full three-player round remains unmeasured."
+  "current_scope": "Halloween load-crash fix and visitor rewind speed; see validation limitations",
+  "previous_acceptance": "docs/halloween-validation.json#previous_acceptance"
 }

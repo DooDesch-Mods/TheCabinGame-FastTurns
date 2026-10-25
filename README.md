@@ -2,13 +2,13 @@
 
 > 🛟 **Need help or found a bug?** Get support at [support.doodesch.de/fastturns](https://support.doodesch.de/fastturns).
 
-Speeds up selected table, card and board-piece transitions at 2x by default. Intro and minigame timers keep their original pace.
+Speeds up selected table, card and board-piece transitions at 2x by default, including the Halloween visitor rewind animation. Intro, dialogue and minigame timers keep their original pace.
 
 ![The Cabin Game table and cards](docs/thumbnail.png)
 
 ## Installation
 
-Requires UE4SS `v3.0.1-1164-g5e627997`, installed separately. Target game version: Steam build `25553694` (Unreal 5.5).
+Requires UE4SS `v3.0.1-1164-g5e627997`, installed separately. Target game version: Steam build `26187517` (Unreal 5.5).
 
 1. Close the game and install UE4SS.
 2. Copy the archive's `Mods/CabinFastTurns` folder into `the_cabin_game/Binaries/Win64/ue4ss/Mods`.

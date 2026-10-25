@@ -2,20 +2,24 @@
 
 > 🛟 **Need help or found a bug?** Get support at [support.doodesch.de/fastturns](https://support.doodesch.de/fastturns).
 
-Speeds up selected table, card and board-piece transitions at 2x by default. Intro and minigame timers keep their original pace.
+Speeds up selected table, card and board-piece transitions at 2x by default, including the Halloween visitor rewind animation. Intro, dialogue and minigame timers keep their original pace.
 
-**Status: test candidate. Game acceptance is pending. No public release yet.**
+## Installation
 
-Target: Steam build `25553694`, Unreal 5.5 and UE4SS `v3.0.1-1164-g5e627997`. Install UE4SS separately.
+Requires UE4SS `v3.0.1-1164-g5e627997`, installed separately. Target game version: Steam build `26187517` (Unreal 5.5).
 
-1. Close the game and install the required UE4SS runtime in your private test copy.
-2. Copy `Mods/CabinFastTurns` into `the_cabin_game/Binaries/Win64/ue4ss/Mods`.
-3. Copy the archive's `the_cabin_game/Content/Paks/~mods` files to the same path in your game folder. Keep the three container files together.
+1. Close the game and install UE4SS.
+2. Copy the archive's `Mods/CabinFastTurns` folder into `the_cabin_game/Binaries/Win64/ue4ss/Mods`.
+3. Copy the archive's `the_cabin_game/Content/Paks/~mods` files into the same path in your game folder. Keep `CabinFastTurns_P.pak`, `CabinFastTurns_P.utoc` and `CabinFastTurns_P.ucas` together.
 
-CabinModSettings is optional. Each function mod uses its defaults and its own validated settings file without the Settings card. GraphicsProfiles supplies profile templates without the Settings card and never applies a profile on startup.
+Every participating multiplayer client needs both the Lua mod and the overlay container files.
 
-FastTurns and ShortEvents settings take effect next round and are controlled by the host. FastTurns requires its Lua and overlay on every participating client. Other settings are local. Multiplayer acceptance is pending.
+## Settings
 
-Close the game before removal. Remove only this mod's folder and its named container files, if included. Back up `Scripts/settings.dat` first to keep preferences. GraphicsProfiles does not restore graphics automatically on removal; use Restore previous before removal if required.
+The mod is enabled by default with a turn speed of 2x. Install the optional CabinModSettings mod to change turn speed from 1x to 5x or disable the mod through the Settings card. Without CabinModSettings, CabinFastTurns uses its defaults and its own validated settings file.
 
-Rejoin integration requires its matching layout/host-settings adapter and authority copies. That combined installation is unaccepted. Do not overwrite an active Rejoin runtime.
+The host controls these settings. Changes take effect next round. When using Rejoin, update the host to Rejoin 0.1.3 or later so its background session loads FastTurns and the host settings.
+
+## Removal
+
+Close the game. Back up `Mods/CabinFastTurns/Scripts/settings.dat` if you want to keep your preferences, then remove the `Mods/CabinFastTurns` folder and the three `CabinFastTurns_P` container files.

@@ -175,5 +175,28 @@ layout.invalid=true
 assert(observed(layout,1008126462,5,'ExecuteUbergraph_CardMapLayout_BP')==5)
 local speed=require('speed')
 assert(not speed.board.IntroRewind_TL and not speed.board.DealCards_TL and not speed.cards.CursorHover_TL)
+-- The new board animation uses the same frozen host factor as forward movement.
+local timeline={rate=1,owner=board,name='TL_VisitorRewind'}
+function timeline:IsValid() return true end
+function timeline:GetOwner() return self.owner end
+function timeline:GetFName() return {ToString=function() return self.name end} end
+function timeline:GetAddress() return 200 end
+function timeline:GetPlayRate() return self.rate end
+function timeline:SetPlayRate(value)
+    local parameterValue=parameter(value)
+    registered['/Script/Engine.TimelineComponent:SetPlayRate'].pre(parameter(self),parameterValue)
+    self.rate=parameterValue:get()
+end
+local play=registered['/Script/Engine.TimelineComponent:PlayFromStart'].pre
+registered[BOARD..':CabinFastTurnsSpeed_MC'].pre(parameter(board),parameter(2))
+play(parameter(timeline));assert(timeline.rate==2)
+play(parameter(timeline));assert(timeline.rate==2,'repeat play must not compound speed')
+timeline:SetPlayRate(0.5);assert(timeline.rate==1,'native rate must compose with host factor')
+play(parameter(timeline));assert(timeline.rate==1)
+registered[BOARD..':CabinFastTurnsSpeed_MC'].pre(parameter(board),parameter(1))
+play(parameter(timeline));assert(timeline.rate==0.5,'disabled round must restore native rate')
+timeline.name='IntroRewind_TL';timeline.rate=1
+registered[BOARD..':CabinFastTurnsSpeed_MC'].pre(parameter(board),parameter(5))
+play(parameter(timeline));assert(timeline.rate==1,'intro rewind must remain native')
 ''')
 print("info: FastTurns: owning runtime delay hook, frozen speed and exclusions passed; native dispatch pending")

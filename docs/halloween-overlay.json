@@ -1,0 +1,11 @@
+{
+  "game_build": "26187517",
+  "source_extraction": "Workspace/research/fastturns-halloween-26187517/source/receipt-GameBoard_BP-ParentCard-PC_Thief-PC_CatchingUp-CardMapLayout_BP.json",
+  "original_exports_preserved": 237,
+  "original_roundtrip_identical": true,
+  "files": {
+    "CabinFastTurns_P.pak": "75e7144577253917f6da7312ef5e585b12fb728226a22b0938323751a6b555cd",
+    "CabinFastTurns_P.ucas": "68b83a10dbe855d6ba7c054c1bd8a82565f6f92f342164710c3db2a863abce78",
+    "CabinFastTurns_P.utoc": "f0185c48da81faa1c325fb75c94800d4d6bb1cf9c508035ec33bc3b718ee14f5"
+  }
+}

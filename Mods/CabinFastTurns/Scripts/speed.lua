@@ -1,6 +1,6 @@
 local M = {}
 M.board = {Rotate_TL=true,AdvancePlayer_TL=true,Visitor_TL=true,FinishVisitor_TL=true,
-    PlayerDeath_TL=true,TableTimeShift_TL=true,GiveTime_TL=true}
+    PlayerDeath_TL=true,TableTimeShift_TL=true,GiveTime_TL=true,TL_VisitorRewind=true}
 M.cards = {Eject_Timeline=true,Eject_TL=true,Eject_SelfPlayer_TL=true,
     ResetCardPOS_TL=true,Timeline_1=true,Graveyard_TL=true,Flip_Timeline=true}
 M.boardDelays = {

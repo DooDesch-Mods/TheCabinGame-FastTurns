@@ -1,7 +1,7 @@
 {
   "mod": "CabinFastTurns",
-  "version": "0.1.1",
-  "game_build": "25553694",
+  "version": "0.1.2",
+  "game_build": "26187517",
   "engine": "5.5",
   "ue4ss": "v3.0.1-1164-g5e627997",
   "overlay": true
