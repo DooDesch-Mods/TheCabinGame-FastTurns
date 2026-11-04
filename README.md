@@ -2,6 +2,8 @@
 
 > 🛟 **Need help or found a bug?** Get support at [support.doodesch.de/fastturns](https://support.doodesch.de/fastturns).
 
+[![Discord](https://mods.doodesch.de/img/badge.svg)](https://mods.doodesch.de)
+
 Speeds up selected table, card and board-piece transitions at 2x by default, including the Halloween visitor rewind animation. Intro, dialogue and minigame timers keep their original pace.
 
 ![The Cabin Game table and cards](docs/thumbnail.png)
@@ -31,3 +33,9 @@ Close the game. Back up `Mods/CabinFastTurns/Scripts/settings.dat` if you want t
 Use Python 3.13. Install development dependencies with `python -m pip install -r requirements-dev.txt`, run `python -m unittest discover -s tests -v` and `python tests/check_lua.py`, then build with `python tools/package.py`.
 
 The builder writes a ZIP and checksum to `dist` using the committed overlay containers. See [publishing](docs/publishing.md) for release checks and [Nexus description](docs/nexus.md) for listing text.
+
+## Community
+
+[![DooDesch Mods on Discord](https://mods.doodesch.de/img/card.svg)](https://mods.doodesch.de)
+
+Join the DooDesch Mods Discord: update pings, polls on what comes next, and playtests of new mods.
